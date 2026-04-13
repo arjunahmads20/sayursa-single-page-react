@@ -17,98 +17,168 @@ import {
 const STORE_NAME = "Sayursa";
 const ADMIN_WA_NUMBER = "6287892999168"; // Replace with your WhatsApp number
 
+
 const PRODUCTS = [
+  // 🥬 Sayur
   {
     id: 1,
-    name: "Fresh Potato 1kg",
+    name: "Kangkung / ikat",
     category: "Vegetables",
-    price: 12000,
-    originalPrice: 15000,
-    tags: ["Local", "Fresh"],
-    image:
-      "https://images.unsplash.com/photo-1518977676601-b53f82aba655?w=400&q=80",
+    price: 3500,
+    originalPrice: "",
+    tags: ["Fresh"],
+    image: "https://source.unsplash.com/400x400/?kangkung,vegetable",
   },
   {
     id: 2,
-    name: "Cavendish Banana",
-    category: "Fruits",
-    price: 18000,
-    originalPrice: 22000,
-    tags: ["Sweet", "Organic"],
-    image:
-      "https://images.unsplash.com/photo-1571501443605-fd00c4365313?w=400&q=80",
-  },
-  {
-    id: 3,
-    name: "Premium White Rice 5kg",
-    category: "Staples",
-    price: 70000,
-    originalPrice: 75000,
-    tags: ["Staple", "Promo"],
-    image:
-      "https://images.unsplash.com/photo-1586201375761-83865001e31c?w=400&q=80",
-  },
-  {
-    id: 4,
-    name: "Fuji Apple 1kg",
-    category: "Fruits",
-    price: 32000,
-    originalPrice: 40000,
-    tags: ["Imported", "Crunchy"],
-    image:
-      "https://images.unsplash.com/photo-1560806887-1e4cd0b6fac6?w=400&q=80",
-  },
-  {
-    id: 5,
-    name: "Baby Carrot 500g",
-    category: "Vegetables",
-    price: 9000,
-    originalPrice: 12000,
-    tags: ["Organic", "Snack"],
-    image:
-      "https://images.unsplash.com/photo-1598170845058-32b9d6a5da37?w=400&q=80",
-  },
-  {
-    id: 6,
-    name: "Fresh Milk 1L",
-    category: "Dairy",
-    price: 16000,
-    originalPrice: 18000,
-    tags: ["Drink", "Chilled"],
-    image:
-      "https://images.unsplash.com/photo-1550583724-b2692b85b150?w=400&q=80",
-  },
-  {
-    id: 7,
-    name: "Omega Eggs 1 Doz",
-    category: "Dairy",
-    price: 26000,
-    originalPrice: 30000,
-    tags: ["Protein", "Healthy"],
-    image:
-      "https://images.unsplash.com/photo-1587486913049-53fc88980cfc?w=400&q=80",
-  },
-  {
-    id: 8,
-    name: "Whole Wheat Bread",
-    category: "Bakery",
-    price: 15000,
-    originalPrice: 18000,
-    tags: ["Breakfast", "Fiber"],
-    image:
-      "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=400&q=80",
-  },
-  {
-    id: 9,
-    name: "Green Spinach 1 Bunch",
+    name: "Kacang Panjang / ikat",
     category: "Vegetables",
     price: 4000,
     originalPrice: 5000,
-    tags: ["Leafy", "Fresh"],
-    image:
-      "https://images.unsplash.com/photo-1576045057995-568f588f82fb?w=400&q=80",
+    tags: ["Fresh"],
+    image: "https://source.unsplash.com/400x400/?long-beans,vegetable",
+  },
+  {
+    id: 3,
+    name: "Wortel / kg",
+    category: "Vegetables",
+    price: 15000,
+    originalPrice: 17000,
+    tags: ["Healthy"],
+    image: "https://source.unsplash.com/400x400/?carrot",
+  },
+  {
+    id: 4,
+    name: "Brokoli / bks",
+    category: "Vegetables",
+    price: 12000,
+    originalPrice: 14000,
+    tags: ["Healthy"],
+    image: "https://source.unsplash.com/400x400/?broccoli",
+  },
+
+  // 🍎 Buah
+  {
+    id: 5,
+    name: "Pisang Ambon / sisir",
+    category: "Fruits",
+    price: 12000,
+    originalPrice: 14000,
+    tags: ["Sweet"],
+    image: "https://source.unsplash.com/400x400/?banana",
+  },
+  {
+    id: 6,
+    name: "Pepaya / kg",
+    category: "Fruits",
+    price: 8000,
+    originalPrice: 10000,
+    tags: ["Fresh"],
+    image: "https://source.unsplash.com/400x400/?papaya",
+  },
+  {
+    id: 7,
+    name: "Jeruk Lokal / kg",
+    category: "Fruits",
+    price: 17000,
+    originalPrice: 20000,
+    tags: ["Vitamin C"],
+    image: "https://source.unsplash.com/400x400/?orange,fruit",
+  },
+  {
+    id: 8,
+    name: "Semangka / buah",
+    category: "Fruits",
+    price: 19000,
+    originalPrice: 22000,
+    tags: ["Fresh"],
+    image: "https://source.unsplash.com/400x400/?watermelon",
+  },
+
+  // 🍱 Protein
+  {
+    id: 9,
+    name: "Telur Ayam / kg",
+    category: "Protein",
+    price: 28500,
+    originalPrice: 30000,
+    tags: ["Protein"],
+    image: "https://source.unsplash.com/400x400/?eggs",
+  },
+  {
+    id: 10,
+    name: "Tempe Daun / bks",
+    category: "Protein",
+    price: 3500,
+    originalPrice: "",
+    tags: ["Local"],
+    image: "https://source.unsplash.com/400x400/?tempeh",
+  },
+  {
+    id: 11,
+    name: "Tahu Putih / bks",
+    category: "Protein",
+    price: 5000,
+    originalPrice: 6000,
+    tags: ["Healthy"],
+    image: "https://source.unsplash.com/400x400/?tofu",
+  },
+
+  // 🥔 Umbi
+  {
+    id: 12,
+    name: "Singkong / kg",
+    category: "Tubers",
+    price: 5000,
+    originalPrice: 6000,
+    tags: ["Local"],
+    image: "https://source.unsplash.com/400x400/?cassava",
+  },
+  {
+    id: 13,
+    name: "Kentang / kg",
+    category: "Tubers",
+    price: 24000,
+    originalPrice: 26000,
+    tags: ["Staple"],
+    image: "https://source.unsplash.com/400x400/?potato",
+  },
+
+  // 🧄 Bumbu
+  {
+    id: 14,
+    name: "Bawang Putih / kg",
+    category: "Spices",
+    price: 40000,
+    originalPrice: 42000,
+    tags: ["Essential"],
+    image: "https://source.unsplash.com/400x400/?garlic",
+  },
+  {
+    id: 15,
+    name: "Cabai Rawit Merah / kg",
+    category: "Spices",
+    price: 80000,
+    originalPrice: 85000,
+    tags: ["Spicy"],
+    image: "https://source.unsplash.com/400x400/?chili",
+  },
+
+  // 🍚 Beras
+  {
+    id: 16,
+    name: "Beras Rojolele / kg",
+    category: "Staples",
+    price: 15000,
+    originalPrice: 16000,
+    tags: ["Premium"],
+    image: "https://source.unsplash.com/400x400/?rice",
   },
 ];
+
+
+
+
 
 // ==========================================
 // 🛒 APP COMPONENTS & LOGIC 🛒
