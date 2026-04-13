@@ -283,65 +283,59 @@ export default function App() {
         ) : (
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
             {filteredProducts.map((product) => {
-              const discount = getDiscountPercent(
-                product.price,
-                product.originalPrice
-              );
+              // Only consider it a discount if originalPrice exists and is greater than price
+              const hasDiscount = product.originalPrice && product.originalPrice > product.price;
+              const discount = hasDiscount ? getDiscountPercent(product.price, product.originalPrice) : null;
+              
               return (
-                <div
-                  key={product.id}
-                  className="bg-white rounded-xl shadow-sm border border-blue-50 overflow-hidden hover:border-purple-300 hover:shadow-md transition-all flex flex-col group"
-                >
+                <div key={product.id} className="bg-white rounded-xl shadow-sm border border-blue-50 overflow-hidden hover:border-purple-300 hover:shadow-md transition-all flex flex-col group">
+                  
                   {/* Product Image Container */}
                   <div className="relative h-28 md:h-36 bg-blue-50/50 overflow-hidden">
-                    <img
-                      src={product.image}
-                      alt={product.name}
+                    <img 
+                      src={product.image} 
+                      alt={product.name} 
                       className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                      onError={(e) => {
-                        e.target.src =
-                          "https://placehold.co/400x300/e2e8f0/64748b?text=Image+Not+Found";
-                      }}
+                      onError={(e) => { e.target.src = '[https://placehold.co/400x300/e2e8f0/64748b?text=Image+Not+Found](https://placehold.co/400x300/e2e8f0/64748b?text=Image+Not+Found)' }}
                     />
-                    {/* Discount Badge */}
-                    {discount && (
+                    
+                    {/* Conditional Discount Badge */}
+                    {hasDiscount && (
                       <div className="absolute top-2 right-2 bg-red-500 text-white text-[10px] md:text-xs font-black px-1.5 py-0.5 rounded-md shadow-sm">
                         -{discount}%
                       </div>
                     )}
                   </div>
+                  
                   {/* Product Details */}
                   <div className="p-3 flex flex-col flex-grow">
                     <h3 className="text-sm md:text-base font-bold text-purple-950 leading-tight mb-1 line-clamp-2">
                       {product.name}
                     </h3>
+                    
                     {/* Tags */}
                     <div className="flex flex-wrap gap-1 mb-2">
-                      {product.tags &&
-                        product.tags.map((tag, idx) => (
-                          <span
-                            key={idx}
-                            className="text-[9px] md:text-[10px] font-semibold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-100"
-                          >
-                            {tag}
-                          </span>
-                        ))}
+                      {product.tags && product.tags.map((tag, idx) => (
+                        <span key={idx} className="text-[9px] md:text-[10px] font-semibold text-purple-600 bg-purple-50 px-1.5 py-0.5 rounded border border-purple-100">
+                          {tag}
+                        </span>
+                      ))}
                     </div>
-
-                    {/* Pricing */}
-                    <div className="mt-auto pt-1 mb-3 flex flex-col">
+            
+                    {/* Pricing with Conditional Strikethrough */}
+                    <div className="mt-auto pt-1 mb-3 flex flex-col min-h-[2.5rem] justify-end">
                       <span className="text-sm md:text-base font-black text-purple-700">
                         {formatPrice(product.price)}
                       </span>
-                      {product.originalPrice &&
-                        product.originalPrice > product.price && (
-                          <span className="text-[10px] md:text-xs text-gray-400 line-through font-medium">
-                            {formatPrice(product.originalPrice)}
-                          </span>
-                        )}
+                      {hasDiscount && (
+                        <span className="text-[10px] md:text-xs text-gray-400 line-through font-medium">
+                          {formatPrice(product.originalPrice)}
+                        </span>
+                      )}
                     </div>
+                    
                     {/* Add Button */}
-                    <button
+                    <button 
                       onClick={() => addToCart(product)}
                       className="w-full bg-purple-800 hover:bg-purple-900 text-white py-1.5 md:py-2 rounded-lg text-xs md:text-sm font-bold transition-colors active:scale-95 flex justify-center items-center gap-1 shadow-sm"
                     >
