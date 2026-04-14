@@ -17,166 +17,86 @@ import {
 const STORE_NAME = "Sayursa";
 const ADMIN_WA_NUMBER = "6287892999168"; // Replace with your WhatsApp number
 
+
 var PRODUCTS = [
   // 🥬 SAYUR
-  { id: 1, name: "Kangkung / ikat", category: "Vegetables", price: 3500, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?kangkung" },
-  { id: 2, name: "Kacang Panjang / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?long-beans" },
-  { id: 3, name: "Labu Siam / bks", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/400x400/?chayote" },
-  { id: 4, name: "Tauge / bks", category: "Vegetables", price: 6000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?bean-sprouts" },
-  { id: 5, name: "Wortel / kg", category: "Vegetables", price: 15000, originalPrice: 17000, tags: ["Healthy"], image: "https://source.unsplash.com/400x400/?carrot" },
-  { id: 6, name: "Sawi Pahit / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Green"], image: "https://source.unsplash.com/400x400/?mustard-greens" },
-  { id: 7, name: "Sawi Pakcoy / ikat", category: "Vegetables", price: 5000, originalPrice: "", tags: ["Green"], image: "https://source.unsplash.com/400x400/?bok-choy" },
-  { id: 8, name: "Selada / kg", category: "Vegetables", price: 25000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?lettuce" },
-  { id: 9, name: "Timun / bks", category: "Vegetables", price: 8000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?cucumber" },
-  { id: 10, name: "Bayam / ikat", category: "Vegetables", price: 5000, originalPrice: "", tags: ["Leafy"], image: "https://source.unsplash.com/400x400/?spinach" },
-  { id: 11, name: "Jagung / bks", category: "Vegetables", price: 7000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?corn" },
-  { id: 12, name: "Terong Ungu / bks", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?eggplant" },
-  { id: 13, name: "Brokoli / bks", category: "Vegetables", price: 12000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/400x400/?broccoli" },
-  { id: 14, name: "Paket Sayur Sop / bks", category: "Vegetables", price: 6000, originalPrice: "", tags: ["Bundle"], image: "https://source.unsplash.com/400x400/?vegetable-soup" },
+  { id: 1, name: "Kangkung / ikat", category: "Vegetables", price: 3500, originalPrice: "", tags: ["Fresh","Leafy"], image: "https://source.unsplash.com/featured/?water-spinach" },
+  { id: 2, name: "Kacang Panjang / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?long-beans" },
+  { id: 3, name: "Labu Siam / bks", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?chayote" },
+  { id: 4, name: "Tauge / bks", category: "Vegetables", price: 6000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?bean-sprouts" },
+  { id: 5, name: "Wortel / kg", category: "Vegetables", price: 15000, originalPrice: 17000, tags: ["Healthy"], image: "https://source.unsplash.com/featured/?carrot" },
+  { id: 6, name: "Sawi Pahit / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Leafy"], image: "https://source.unsplash.com/featured/?mustard-greens" },
+  { id: 7, name: "Sawi Pakcoy / ikat", category: "Vegetables", price: 5000, originalPrice: "", tags: ["Green"], image: "https://source.unsplash.com/featured/?bok-choy" },
+  { id: 8, name: "Selada / kg", category: "Vegetables", price: 25000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?lettuce" },
+  { id: 9, name: "Timun / bks", category: "Vegetables", price: 8000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?cucumber" },
+  { id: 10, name: "Bayam / ikat", category: "Vegetables", price: 5000, originalPrice: "", tags: ["Leafy"], image: "https://source.unsplash.com/featured/?spinach" },
+  { id: 11, name: "Jagung / bks", category: "Vegetables", price: 7500, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?corn" },
+  { id: 12, name: "Terong Ungu / bks", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?eggplant" },
+  { id: 13, name: "Brokoli / bks", category: "Vegetables", price: 12000, originalPrice: 14000, tags: ["Healthy"], image: "https://source.unsplash.com/featured/?broccoli" },
+  { id: 14, name: "Daun Singkong / ikat", category: "Vegetables", price: 5000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?cassava-leaves" },
+  { id: 15, name: "Sayur Pakis / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?fern-vegetable" },
+  { id: 16, name: "Labu Kuning / kg", category: "Vegetables", price: 25000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?pumpkin" },
+  { id: 17, name: "Paket Sayur Sop / bks", category: "Vegetables", price: 6000, originalPrice: "", tags: ["Bundle"], image: "https://source.unsplash.com/featured/?vegetable-mix" },
 
   // 🍎 BUAH
-  { id: 15, name: "Salak Pondoh / kg", category: "Fruits", price: 8000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/400x400/?salak" },
-  { id: 16, name: "Pisang Mas / sisir", category: "Fruits", price: 19500, originalPrice: "", tags: ["Sweet"], image: "https://source.unsplash.com/400x400/?banana" },
-  { id: 17, name: "Pisang Ambon / sisir", category: "Fruits", price: 12000, originalPrice: 14000, tags: ["Sweet"], image: "https://source.unsplash.com/400x400/?banana" },
-  { id: 18, name: "Pisang Susu / sisir", category: "Fruits", price: 15000, originalPrice: "", tags: ["Sweet"], image: "https://source.unsplash.com/400x400/?banana" },
-  { id: 19, name: "Pepaya / kg", category: "Fruits", price: 8000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?papaya" },
-  { id: 20, name: "Tomat / kg", category: "Fruits", price: 18000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?tomato" },
-  { id: 21, name: "Buah Naga / bks", category: "Fruits", price: 19000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?dragon-fruit" },
-  { id: 22, name: "Jeruk Lokal / kg", category: "Fruits", price: 17000, originalPrice: "", tags: ["Vitamin C"], image: "https://source.unsplash.com/400x400/?orange" },
-  { id: 23, name: "Alpukat / kg", category: "Fruits", price: 33000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/400x400/?avocado" },
-  { id: 24, name: "Semangka / kg", category: "Fruits", price: 6000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?watermelon" },
-  { id: 25, name: "Mangga / kg", category: "Fruits", price: 20000, originalPrice: "", tags: ["Sweet"], image: "https://source.unsplash.com/400x400/?mango" },
+  { id: 18, name: "Salak Pondoh / kg", category: "Fruits", price: 8000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?snake-fruit" },
+  { id: 19, name: "Pisang Mas / sisir", category: "Fruits", price: 19500, originalPrice: "", tags: ["Sweet"], image: "https://source.unsplash.com/featured/?banana" },
+  { id: 20, name: "Pisang Ambon / sisir", category: "Fruits", price: 12000, originalPrice: 14000, tags: ["Sweet"], image: "https://source.unsplash.com/featured/?banana-bunch" },
+  { id: 21, name: "Pisang Susu / sisir", category: "Fruits", price: 15000, originalPrice: "", tags: ["Sweet"], image: "https://source.unsplash.com/featured/?banana" },
+  { id: 22, name: "Pisang Kepok Kecil / sisir", category: "Fruits", price: 12000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?plantain" },
+  { id: 23, name: "Pepaya / kg", category: "Fruits", price: 8000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?papaya" },
+  { id: 24, name: "Tomat / kg", category: "Fruits", price: 18000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?tomato" },
+  { id: 25, name: "Buah Naga / kg", category: "Fruits", price: 21000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?dragon-fruit" },
+  { id: 26, name: "Jeruk Lokal / kg", category: "Fruits", price: 17000, originalPrice: "", tags: ["Vitamin C"], image: "https://source.unsplash.com/featured/?orange-fruit" },
+  { id: 27, name: "Alpukat / kg", category: "Fruits", price: 33000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/featured/?avocado" },
+  { id: 28, name: "Semangka / kg", category: "Fruits", price: 19000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?watermelon" },
+  { id: 29, name: "Nanas / buah", category: "Fruits", price: 6000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?pineapple" },
+  { id: 30, name: "Stroberi / bks", category: "Fruits", price: 11000, originalPrice: 13000, tags: ["Sweet"], image: "https://source.unsplash.com/featured/?strawberry" },
 
   // 🍱 PROTEIN
-  { id: 26, name: "Ayam Potong / kg", category: "Protein", price: 45000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?chicken-meat" },
-  { id: 27, name: "Ikan Tongkol / 1/2 kg", category: "Protein", price: 40000, originalPrice: "", tags: ["Fish"], image: "https://source.unsplash.com/400x400/?fish" },
-  { id: 28, name: "Telur Ayam / kg", category: "Protein", price: 28500, originalPrice: 30000, tags: ["Protein"], image: "https://source.unsplash.com/400x400/?eggs" },
-  { id: 29, name: "Tempe Daun / bks", category: "Protein", price: 3500, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/400x400/?tempeh" },
-  { id: 30, name: "Tempe Plastik / bks", category: "Protein", price: 6000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/400x400/?tempeh" },
-  { id: 31, name: "Tahu Putih / bks", category: "Protein", price: 5000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/400x400/?tofu" },
-  { id: 32, name: "Tahu Kuning / bks", category: "Protein", price: 5000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/400x400/?tofu" },
+  { id: 31, name: "Ayam Potong / kg", category: "Protein", price: 45000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?chicken-meat" },
+  { id: 32, name: "Ati Ayam / kg", category: "Protein", price: 32000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?chicken-liver" },
+  { id: 33, name: "Telur Ayam Negeri / kg", category: "Protein", price: 29500, originalPrice: 31000, tags: ["Protein"], image: "https://source.unsplash.com/featured/?eggs" },
+  { id: 34, name: "Telur Ayam Kampung / kg", category: "Protein", price: 34500, originalPrice: "", tags: ["Premium"], image: "https://source.unsplash.com/featured/?eggs-brown" },
+  { id: 35, name: "Tempe Daun / bks", category: "Protein", price: 3500, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?tempeh" },
+  { id: 36, name: "Tempe Plastik / bks", category: "Protein", price: 6000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?tempeh" },
+  { id: 37, name: "Tahu Putih / bks", category: "Protein", price: 5000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/featured/?tofu" },
+  { id: 38, name: "Tahu Kuning / bks", category: "Protein", price: 5000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/featured/?tofu" },
+  { id: 39, name: "Ikan Tongkol / 1/2 kg", category: "Protein", price: 40000, originalPrice: "", tags: ["Fish"], image: "https://source.unsplash.com/featured/?fish" },
 
   // 🥔 UMBI
-  { id: 33, name: "Singkong / kg", category: "Tubers", price: 5000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/400x400/?cassava" },
-  { id: 34, name: "Kentang / kg", category: "Tubers", price: 24000, originalPrice: "", tags: ["Staple"], image: "https://source.unsplash.com/400x400/?potato" },
-  { id: 35, name: "Ubi Jalar Ungu / kg", category: "Tubers", price: 12000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/400x400/?sweet-potato" },
-  { id: 36, name: "Ubi Jalar Oren / kg", category: "Tubers", price: 9000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/400x400/?sweet-potato" },
-  { id: 37, name: "Labu Kuning / kg", category: "Tubers", price: 25000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?pumpkin" },
-  { id: 38, name: "Tape Singkong / bks", category: "Tubers", price: 5000, originalPrice: "", tags: ["Snack"], image: "https://source.unsplash.com/400x400/?cassava-fermented" },
+  { id: 40, name: "Singkong / kg", category: "Tubers", price: 5000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?cassava" },
+  { id: 41, name: "Kentang / kg", category: "Tubers", price: 24000, originalPrice: "", tags: ["Staple"], image: "https://source.unsplash.com/featured/?potato" },
+  { id: 42, name: "Ubi Jalar Ungu / kg", category: "Tubers", price: 12000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/featured/?sweet-potato" },
+  { id: 43, name: "Ubi Jalar Oren Madu / kg", category: "Tubers", price: 9000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/featured/?sweet-potato-orange" },
 
   // 🧄 BUMBU
-  { id: 39, name: "Bawang Putih / kg", category: "Spices", price: 40000, originalPrice: "", tags: ["Essential"], image: "https://source.unsplash.com/400x400/?garlic" },
-  { id: 40, name: "Bawang Merah / kg", category: "Spices", price: 44000, originalPrice: "", tags: ["Essential"], image: "https://source.unsplash.com/400x400/?shallot" },
-  { id: 41, name: "Bawang Bombai / kg", category: "Spices", price: 36000, originalPrice: "", tags: ["Essential"], image: "https://source.unsplash.com/400x400/?onion" },
-  { id: 42, name: "Cabai Rawit Merah / kg", category: "Spices", price: 80000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/400x400/?chili" },
-  { id: 43, name: "Cabai Merah Besar / kg", category: "Spices", price: 38000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/400x400/?red-chili" },
-  { id: 44, name: "Cabai Merah Keriting / kg", category: "Spices", price: 40000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/400x400/?chili" },
-
-  // 🍱 NASI & LAUK
-  { id: 45, name: "Bubur Kacang Hijau", category: "Ready Meals", price: 6000, originalPrice: "", tags: ["Traditional"], image: "https://source.unsplash.com/400x400/?porridge" },
+  { id: 44, name: "Bawang Putih / kg", category: "Spices", price: 40000, originalPrice: "", tags: ["Essential"], image: "https://source.unsplash.com/featured/?garlic" },
+  { id: 45, name: "Bawang Merah / kg", category: "Spices", price: 44000, originalPrice: "", tags: ["Essential"], image: "https://source.unsplash.com/featured/?shallot" },
+  { id: 46, name: "Bawang Bombai / kg", category: "Spices", price: 36000, originalPrice: "", tags: ["Essential"], image: "https://source.unsplash.com/featured/?onion" },
+  { id: 47, name: "Cabai Rawit Merah / kg", category: "Spices", price: 80000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/featured/?chili" },
+  { id: 48, name: "Cabai Merah Besar / kg", category: "Spices", price: 38000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/featured/?red-chili" },
+  { id: 49, name: "Cabai Merah Keriting / kg", category: "Spices", price: 40000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/featured/?chili-pepper" },
+  { id: 50, name: "Daun Bawang / kg", category: "Spices", price: null, originalPrice: "", tags: ["Herb"], image: "https://source.unsplash.com/featured/?green-onion" },
+  { id: 51, name: "Jahe / kg", category: "Spices", price: null, originalPrice: "", tags: ["Herb"], image: "https://source.unsplash.com/featured/?ginger" },
+  { id: 52, name: "Kunyit / kg", category: "Spices", price: null, originalPrice: "", tags: ["Herb"], image: "https://source.unsplash.com/featured/?turmeric" },
 
   // 🍚 BERAS
-  { id: 46, name: "Beras Rojolele / kg", category: "Staples", price: 15000, originalPrice: "", tags: ["Premium"], image: "https://source.unsplash.com/400x400/?rice" },
-  { id: 47, name: "Beras Pandan Wangi / kg", category: "Staples", price: 18500, originalPrice: "", tags: ["Aromatic"], image: "https://source.unsplash.com/400x400/?rice" },
-  { id: 48, name: "Beras SPHP / 5kg", category: "Staples", price: 65000, originalPrice: "", tags: ["Bulk"], image: "https://source.unsplash.com/400x400/?rice" },
+  { id: 53, name: "Beras Rojolele / kg", category: "Staples", price: 15000, originalPrice: "", tags: ["Premium"], image: "https://source.unsplash.com/featured/?rice" },
+  { id: 54, name: "Beras Pandan Wangi / kg", category: "Staples", price: 18500, originalPrice: "", tags: ["Aromatic"], image: "https://source.unsplash.com/featured/?white-rice" },
+  { id: 55, name: "Beras SPHP / 5kg", category: "Staples", price: 65000, originalPrice: 70000, tags: ["Bulk"], image: "https://source.unsplash.com/featured/?rice-bag" },
+  { id: 56, name: "Beras Ketan / kg", category: "Staples", price: null, originalPrice: "", tags: ["Sticky"], image: "https://source.unsplash.com/featured/?sticky-rice" },
+  { id: 57, name: "Bubur Merah / kg", category: "Staples", price: null, originalPrice: "", tags: ["Traditional"], image: "https://source.unsplash.com/featured/?porridge" },
 
-  // 🧂 BUMBU INSTAN (NEW)
-  { id: 49, name: "Indofood Bumbu Racik Ayam Goreng", category: "Spices", price: 3000, originalPrice: "", tags: ["Instant"], image: "https://source.unsplash.com/400x400/?seasoning" },
-  { id: 50, name: "Indofood Bumbu Racik Nasi Goreng", category: "Spices", price: 3000, originalPrice: "", tags: ["Instant"], image: "https://source.unsplash.com/400x400/?fried-rice" },
+  // 🥜 KACANG
+  { id: 58, name: "Kacang Hijau / kg", category: "Legumes", price: 32000, originalPrice: "", tags: ["Healthy"], image: "https://source.unsplash.com/featured/?mung-beans" },
+  { id: 59, name: "Kacang Madu / kg", category: "Legumes", price: 26000, originalPrice: "", tags: ["Snack"], image: "https://source.unsplash.com/featured/?peanuts" },
 
-  // 🥤 MINUMAN
-  { id: 51, name: "Ultra Milk 200ml", category: "Beverages", price: 6800, originalPrice: "", tags: ["Milk"], image: "https://source.unsplash.com/400x400/?milk" },
-  { id: 52, name: "Hydro Coco 250ml", category: "Beverages", price: 9000, originalPrice: "", tags: ["Coconut"], image: "https://source.unsplash.com/400x400/?coconut-water" },
-  { id: 53, name: "Teh Botol Sosro", category: "Beverages", price: 6000, originalPrice: "", tags: ["Tea"], image: "https://source.unsplash.com/400x400/?tea-bottle" },
-
-  // 🍪 SNACK
-  { id: 54, name: "Biskuat", category: "Snacks", price: 8000, originalPrice: "", tags: ["Kids"], image: "https://source.unsplash.com/400x400/?biscuit" },
-  { id: 55, name: "Roma Kelapa", category: "Snacks", price: 11000, originalPrice: 13000, tags: ["Biscuit"], image: "https://source.unsplash.com/400x400/?biscuits" },
-  { id: 56, name: "Chitato", category: "Snacks", price: 11800, originalPrice: "", tags: ["Chips"], image: "https://source.unsplash.com/400x400/?chips" },
-
-  // 🧻 HOUSEHOLD
-  { id: 57, name: "Tisu Nice", category: "Household", price: 9000, originalPrice: "", tags: ["Daily"], image: "https://source.unsplash.com/400x400/?tissue" },
-  { id: 58, name: "Sunlight Refill", category: "Household", price: 17500, originalPrice: 19000, tags: ["Cleaning"], image: "https://source.unsplash.com/400x400/?dishwashing-liquid" },
+  // 🍱 JAJANAN
+  { id: 60, name: "Tape Singkong / bks", category: "Snacks", price: 5000, originalPrice: "", tags: ["Traditional"], image: "https://source.unsplash.com/featured/?cassava-fermented" },
+  { id: 61, name: "Bubur Kacang Hijau / bks", category: "Snacks", price: 6000, originalPrice: "", tags: ["Traditional"], image: "https://source.unsplash.com/featured/?green-bean-porridge" },
+  { id: 62, name: "Kue Pukis / bks", category: "Snacks", price: 5000, originalPrice: "", tags: ["Sweet"], image: "https://source.unsplash.com/featured/?cake" },
 ];
-
-
-const MORE_PRODUCTS = [
-  // 🍪 SNACK TAMBAHAN
-  { id: 59, name: "Oreo Original 133g", category: "Snacks", price: 9500, originalPrice: 11000, tags: ["Biscuit"], image: "https://source.unsplash.com/400x400/?oreo,biscuit" },
-  { id: 60, name: "Good Time Cookies", category: "Snacks", price: 10500, originalPrice: "", tags: ["Cookies"], image: "https://source.unsplash.com/400x400/?cookies" },
-  { id: 61, name: "Tango Wafer Chocolate", category: "Snacks", price: 9000, originalPrice: "", tags: ["Wafer"], image: "https://source.unsplash.com/400x400/?wafer" },
-  { id: 62, name: "Qtela Singkong Chips", category: "Snacks", price: 11000, originalPrice: "", tags: ["Chips"], image: "https://source.unsplash.com/400x400/?cassava-chips" },
-  { id: 63, name: "Lays Potato Chips", category: "Snacks", price: 12000, originalPrice: "", tags: ["Chips"], image: "https://source.unsplash.com/400x400/?potato-chips" },
-  { id: 64, name: "SilverQueen Chocolate Small", category: "Snacks", price: 15000, originalPrice: 17000, tags: ["Chocolate"], image: "https://source.unsplash.com/400x400/?chocolate-bar" },
-  { id: 65, name: "Delfi Chocolate Bar", category: "Snacks", price: 13000, originalPrice: "", tags: ["Chocolate"], image: "https://source.unsplash.com/400x400/?chocolate" },
-
-  // 🥤 MINUMAN TAMBAHAN
-  { id: 66, name: "Aqua Botol 600ml", category: "Beverages", price: 5000, originalPrice: "", tags: ["Water"], image: "https://source.unsplash.com/400x400/?mineral-water" },
-  { id: 67, name: "Le Minerale 600ml", category: "Beverages", price: 5000, originalPrice: "", tags: ["Water"], image: "https://source.unsplash.com/400x400/?water-bottle" },
-  { id: 68, name: "Floridina Orange", category: "Beverages", price: 6000, originalPrice: "", tags: ["Juice"], image: "https://source.unsplash.com/400x400/?orange-drink" },
-  { id: 69, name: "Pocari Sweat 500ml", category: "Beverages", price: 9000, originalPrice: 10000, tags: ["Isotonic"], image: "https://source.unsplash.com/400x400/?isotonic-drink" },
-  { id: 70, name: "Mizone 500ml", category: "Beverages", price: 7000, originalPrice: "", tags: ["Vitamin"], image: "https://source.unsplash.com/400x400/?vitamin-drink" },
-  { id: 71, name: "Kopi Good Day Botol", category: "Beverages", price: 8500, originalPrice: "", tags: ["Coffee"], image: "https://source.unsplash.com/400x400/?coffee-bottle" },
-  { id: 72, name: "Teh Pucuk Harum", category: "Beverages", price: 6000, originalPrice: "", tags: ["Tea"], image: "https://source.unsplash.com/400x400/?iced-tea" },
-
-  // 🧻 HOUSEHOLD TAMBAHAN
-  { id: 73, name: "Dettol Sabun Cair 250ml", category: "Household", price: 22000, originalPrice: 24000, tags: ["Hygiene"], image: "https://source.unsplash.com/400x400/?liquid-soap" },
-  { id: 74, name: "Lifebuoy Sabun Batang", category: "Household", price: 5000, originalPrice: "", tags: ["Hygiene"], image: "https://source.unsplash.com/400x400/?soap-bar" },
-  { id: 75, name: "Pepsodent Pasta Gigi", category: "Household", price: 12000, originalPrice: "", tags: ["Dental"], image: "https://source.unsplash.com/400x400/?toothpaste" },
-  { id: 76, name: "Rinso Deterjen 800g", category: "Household", price: 18000, originalPrice: 20000, tags: ["Laundry"], image: "https://source.unsplash.com/400x400/?detergent" },
-  { id: 77, name: "Molto Pewangi Pakaian", category: "Household", price: 9000, originalPrice: "", tags: ["Laundry"], image: "https://source.unsplash.com/400x400/?fabric-softener" },
-  { id: 78, name: "Wipol Pembersih Lantai", category: "Household", price: 16000, originalPrice: "", tags: ["Cleaning"], image: "https://source.unsplash.com/400x400/?floor-cleaner" },
-];
-
-const MORE_PRODUCTS_2 = [
-  // 🍪 SNACK
-  { id: 79, name: "Choki Choki Coklat", category: "Snacks", price: 6000, originalPrice: "", tags: ["Kids"], image: "https://source.unsplash.com/400x400/?chocolate-snack" },
-  { id: 80, name: "Momogi Stick Jagung", category: "Snacks", price: 6000, originalPrice: "", tags: ["Snack"], image: "https://source.unsplash.com/400x400/?corn-snack" },
-  { id: 81, name: "Piattos Snack", category: "Snacks", price: 9000, originalPrice: "", tags: ["Chips"], image: "https://source.unsplash.com/400x400/?chips" },
-  { id: 82, name: "Nextar Brownies", category: "Snacks", price: 9000, originalPrice: "", tags: ["Sweet"], image: "https://source.unsplash.com/400x400/?brownies" },
-  { id: 83, name: "Taro Net Snack", category: "Snacks", price: 10000, originalPrice: "", tags: ["Snack"], image: "https://source.unsplash.com/400x400/?snack" },
-  { id: 84, name: "Garuda Kacang Kulit", category: "Snacks", price: 12000, originalPrice: "", tags: ["Nuts"], image: "https://source.unsplash.com/400x400/?peanuts" },
-  { id: 85, name: "Kacang Atom", category: "Snacks", price: 10000, originalPrice: "", tags: ["Nuts"], image: "https://source.unsplash.com/400x400/?coated-peanuts" },
-  { id: 86, name: "Kerupuk Udang", category: "Snacks", price: 8000, originalPrice: "", tags: ["Traditional"], image: "https://source.unsplash.com/400x400/?shrimp-crackers" },
-  { id: 87, name: "Makaroni Pedas", category: "Snacks", price: 10000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/400x400/?spicy-snack" },
-  { id: 88, name: "Basreng Pedas", category: "Snacks", price: 12000, originalPrice: "", tags: ["Spicy"], image: "https://source.unsplash.com/400x400/?fried-snack" },
-
-  // 🥤 MINUMAN
-  { id: 89, name: "Coca Cola 390ml", category: "Beverages", price: 7000, originalPrice: "", tags: ["Soda"], image: "https://source.unsplash.com/400x400/?cola" },
-  { id: 90, name: "Fanta Orange", category: "Beverages", price: 7000, originalPrice: "", tags: ["Soda"], image: "https://source.unsplash.com/400x400/?orange-soda" },
-  { id: 91, name: "Sprite", category: "Beverages", price: 7000, originalPrice: "", tags: ["Soda"], image: "https://source.unsplash.com/400x400/?lemon-soda" },
-  { id: 92, name: "ABC Susu Kedelai", category: "Beverages", price: 6000, originalPrice: "", tags: ["Soy Milk"], image: "https://source.unsplash.com/400x400/?soy-milk" },
-  { id: 93, name: "Yakult Pack", category: "Beverages", price: 12000, originalPrice: 14000, tags: ["Probiotic"], image: "https://source.unsplash.com/400x400/?yakult" },
-  { id: 94, name: "Susu Bear Brand", category: "Beverages", price: 12000, originalPrice: "", tags: ["Milk"], image: "https://source.unsplash.com/400x400/?milk-can" },
-  { id: 95, name: "Kopi Kapal Api Sachet", category: "Beverages", price: 2500, originalPrice: "", tags: ["Coffee"], image: "https://source.unsplash.com/400x400/?coffee" },
-  { id: 96, name: "Energen Coklat", category: "Beverages", price: 3000, originalPrice: "", tags: ["Cereal"], image: "https://source.unsplash.com/400x400/?cereal-drink" },
-
-  // 🧻 HOUSEHOLD
-  { id: 97, name: "Soklin Deterjen 800g", category: "Household", price: 17000, originalPrice: "", tags: ["Laundry"], image: "https://source.unsplash.com/400x400/?detergent" },
-  { id: 98, name: "Attack Deterjen 800g", category: "Household", price: 19000, originalPrice: 21000, tags: ["Laundry"], image: "https://source.unsplash.com/400x400/?washing-powder" },
-  { id: 99, name: "Mama Lemon 780ml", category: "Household", price: 15000, originalPrice: "", tags: ["Cleaning"], image: "https://source.unsplash.com/400x400/?dish-soap" },
-  { id: 100, name: "Bayclin Pemutih", category: "Household", price: 12000, originalPrice: "", tags: ["Cleaning"], image: "https://source.unsplash.com/400x400/?bleach" },
-  { id: 101, name: "Karbol Wangi", category: "Household", price: 14000, originalPrice: "", tags: ["Cleaning"], image: "https://source.unsplash.com/400x400/?floor-cleaner" },
-  { id: 102, name: "Tisu Paseo", category: "Household", price: 12000, originalPrice: "", tags: ["Daily"], image: "https://source.unsplash.com/400x400/?tissue" },
-  { id: 103, name: "Masker Medis 1 Box", category: "Household", price: 25000, originalPrice: "", tags: ["Health"], image: "https://source.unsplash.com/400x400/?face-mask" },
-  { id: 104, name: "Hand Sanitizer 100ml", category: "Household", price: 10000, originalPrice: "", tags: ["Hygiene"], image: "https://source.unsplash.com/400x400/?hand-sanitizer" },
-
-  // BONU
-  { id: 105, name: "Indomie Goreng", category: "Staples", price: 3500, originalPrice: "", tags: ["Instant"], image: "https://source.unsplash.com/400x400/?instant-noodles" },
-  { id: 106, name: "Indomie Soto", category: "Staples", price: 3500, originalPrice: "", tags: ["Instant"], image: "https://source.unsplash.com/400x400/?noodles" },
-  { id: 107, name: "Gula Pasir 1kg", category: "Staples", price: 16000, originalPrice: "", tags: ["Basic"], image: "https://source.unsplash.com/400x400/?sugar" },
-  { id: 108, name: "Minyak Goreng 1L", category: "Staples", price: 18000, originalPrice: 20000, tags: ["Cooking"], image: "https://source.unsplash.com/400x400/?cooking-oil" },
-];
-
-
-PRODUCTS = [
-  ...PRODUCTS,
-  ...MORE_PRODUCTS,
-  ...MORE_PRODUCTS_2
-]
-
-
-
 
 
 
