@@ -17,7 +17,7 @@ import {
 const STORE_NAME = "Sayursa";
 const ADMIN_WA_NUMBER = "6287892999168"; // Replace with your WhatsApp number
 
-const PRODUCTS = [
+var PRODUCTS = [
   // 🥬 SAYUR
   { id: 1, name: "Kangkung / ikat", category: "Vegetables", price: 3500, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?kangkung" },
   { id: 2, name: "Kacang Panjang / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/400x400/?long-beans" },
