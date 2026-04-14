@@ -20,8 +20,8 @@ const ADMIN_WA_NUMBER = "6287892999168"; // Replace with your WhatsApp number
 
 var PRODUCTS = [
   // 🥬 SAYUR
-  { id: 1, name: "Kangkung / ikat", category: "Vegetables", price: 3500, originalPrice: "", tags: ["Fresh","Leafy"], image: "https://source.unsplash.com/featured/?water-spinach" },
-  { id: 2, name: "Kacang Panjang / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?long-beans" },
+  { id: 1, name: "Kangkung / ikat", category: "Vegetables", price: 3500, originalPrice: "", tags: ["Fresh","Leafy"], image: "/images/products/kangkung.png" },
+  { id: 2, name: "Kacang Panjang / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Fresh"], image: "/images/products/kacang-panjang.png" },
   { id: 3, name: "Labu Siam / bks", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Local"], image: "https://source.unsplash.com/featured/?chayote" },
   { id: 4, name: "Tauge / bks", category: "Vegetables", price: 6000, originalPrice: "", tags: ["Fresh"], image: "https://source.unsplash.com/featured/?bean-sprouts" },
   { id: 5, name: "Wortel / kg", category: "Vegetables", price: 15000, originalPrice: 17000, tags: ["Healthy"], image: "https://source.unsplash.com/featured/?carrot" },
