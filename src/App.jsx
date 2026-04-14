@@ -16,7 +16,6 @@ import {
 
 const STORE_NAME = "Sayursa";
 const ADMIN_WA_NUMBER = "6287892999168"; // Replace with your WhatsApp number
-
 const PRODUCTS = [
   // 🥬 SAYUR
   { id: 1, name: "Kangkung / ikat", category: "Vegetables", price: 3500, originalPrice: "", tags: ["Fresh","Leafy"], image: "/images/products/kangkung.png" },
@@ -26,6 +25,7 @@ const PRODUCTS = [
   { id: 5, name: "Wortel / kg", category: "Vegetables", price: 15000, originalPrice: 17000, tags: ["Healthy","Fresh"], image: "/images/products/wortel.png" },
   { id: 6, name: "Sawi Pahit / ikat", category: "Vegetables", price: 4000, originalPrice: "", tags: ["Leafy","Fresh"], image: "/images/products/sawi-pahit.png" },
   { id: 7, name: "Sawi Pakcoy / ikat", category: "Vegetables", price: 5000, originalPrice: "", tags: ["Green","Fresh"], image: "/images/products/sawi-pakcoy.png" },
+  { id: 101, name: "Kubis / kg", category: "Vegetables", price: 22000, originalPrice: 24000, tags: ["Leafy","Fresh"], image: "/images/products/kubis.png" },
   { id: 8, name: "Selada / kg", category: "Vegetables", price: 25000, originalPrice: "", tags: ["Fresh","Salad"], image: "/images/products/selada.png" },
   { id: 9, name: "Timun / bks", category: "Vegetables", price: 8000, originalPrice: "", tags: ["Fresh","Hydrating"], image: "/images/products/timun.png" },
   { id: 10, name: "Bayam / ikat", category: "Vegetables", price: 5000, originalPrice: "", tags: ["Leafy","Healthy"], image: "/images/products/bayam.png" },
@@ -66,8 +66,8 @@ const PRODUCTS = [
   // 🥔 UMBI
   { id: 40, name: "Singkong / kg", category: "Tubers", price: 5000, originalPrice: "", tags: ["Local","Staple"], image: "/images/products/singkong.png" },
   { id: 41, name: "Kentang / kg", category: "Tubers", price: 24000, originalPrice: "", tags: ["Staple","Cooking"], image: "/images/products/kentang.png" },
-  { id: 42, name: "Ubi Jalar Ungu / kg", category: "Tubers", price: 12000, originalPrice: "", tags: ["Healthy","Local"], image: "/images/products/ubi-ungu.png" },
-  { id: 43, name: "Ubi Jalar Oren Madu / kg", category: "Tubers", price: 9000, originalPrice: "", tags: ["Sweet","Local"], image: "/images/products/ubi-oren.png" },
+  { id: 42, name: "Ubi Jalar Ungu / kg", category: "Tubers", price: 12000, originalPrice: "", tags: ["Healthy","Local"], image: "/images/products/ubi-jalar-ungu.png" },
+  { id: 43, name: "Ubi Jalar Oren / kg", category: "Tubers", price: 9000, originalPrice: "", tags: ["Sweet","Local"], image: "/images/products/ubi--jalar-oren.png" },
 
   // 🧄 BUMBU
   { id: 44, name: "Bawang Putih / kg", category: "Spices", price: 40000, originalPrice: "", tags: ["Essential","Cooking"], image: "/images/products/bawang-putih.png" },
@@ -101,6 +101,10 @@ const PRODUCTS = [
   { id: 66, name: "Bubur Kacang Hijau / bks", category: "Snacks", price: 6000, originalPrice: "", tags: ["Traditional","Warm"], image: "/images/products/bubur-kacang-hijau.png" },
   { id: 67, name: "Kue Pukis / bks", category: "Snacks", price: 5000, originalPrice: "", tags: ["Sweet","Traditional"], image: "/images/products/kue-pukis.png" },
 ];
+
+
+
+
 
 
 
