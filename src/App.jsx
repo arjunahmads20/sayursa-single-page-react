@@ -67,7 +67,7 @@ const PRODUCTS = [
   { id: 40, name: "Singkong / kg", category: "Tubers", price: 5000, originalPrice: "", tags: ["Local","Staple"], image: "/images/products/singkong.png" },
   { id: 41, name: "Kentang / kg", category: "Tubers", price: 24000, originalPrice: "", tags: ["Staple","Cooking"], image: "/images/products/kentang.png" },
   { id: 42, name: "Ubi Jalar Ungu / kg", category: "Tubers", price: 12000, originalPrice: "", tags: ["Healthy","Local"], image: "/images/products/ubi-jalar-ungu.png" },
-  { id: 43, name: "Ubi Jalar Oren / kg", category: "Tubers", price: 9000, originalPrice: "", tags: ["Sweet","Local"], image: "/images/products/ubi--jalar-oren.png" },
+  { id: 43, name: "Ubi Jalar Oren / kg", category: "Tubers", price: 9000, originalPrice: "", tags: ["Sweet","Local"], image: "/images/products/ubi-jalar-oren.png" },
 
   // 🧄 BUMBU
   { id: 44, name: "Bawang Putih / kg", category: "Spices", price: 40000, originalPrice: "", tags: ["Essential","Cooking"], image: "/images/products/bawang-putih.png" },
